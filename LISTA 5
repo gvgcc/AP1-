@@ -1,0 +1,50 @@
+1. Escreva um programa em c que verifica se um número inteiro é par. O programa deve exibir a mensagem "O número é par" se o número for par, e "O número é ímpar" caso contrário.
+R: 
+#include <stdio.h>
+
+int main (){
+
+    int numero;
+
+    printf ("digite um numero: ");
+    scanf ("%i,", &numero);
+    if (numero % 2 == 0){
+    printf ("o numero digitado e par!");
+    }else if (numero % 2 != 0){
+    printf ("o numero digitado e impar!");
+    }
+    
+    return 0;
+}
+
+2. Escreva um programa em c que verifica se um aluno foi aprovado em uma disciplina. O aluno é considerado aprovado se sua média final for maior ou igual a 7 e se ele não tiver faltado mais de 25% das aulas. 
+O programa deve exibir a mensagem "Aluno aprovado" se o aluno satisfazer as duas condições, e "Aluno reprovado" caso contrário.
+R:
+#include <stdio.h>
+
+int main() {
+    float media;
+    int aulas, presenca;
+
+    printf ("digite a media final do aluno: ");
+    scanf ("%f", &media);
+
+    printf ("digite o valor total de aulas ministradas: ");
+    scanf ("%i", &aulas);
+
+    printf ("digite o valor total de presencas do aluno: ");
+    scanf ("%i", &presenca);
+
+    float porcentagem_presenca = ((float) presenca/aulas) * 100;
+
+    if (media >= 7 && porcentagem_presenca >= 75)
+    {
+        printf ("aluno aprovado");
+    } else { 
+        printf ("aluno reprovado");
+    }
+
+    return 0;
+
+
+}
