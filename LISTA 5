@@ -48,3 +48,95 @@ int main() {
 
 
 }
+
+3. Escreva um programa que verifica se um ano é bissexto.
+Um ano é bissexto se for divisível por 4, mas não por 100, exceto se for divisível por 400.
+O programa deve exibir a mensagem "Ano bissexto" se a condição for verdadeira, e "Ano não bissexto" caso contrário.
+R:
+
+#include <stdio.h>
+
+int main() {
+    int ano;
+
+    printf("Insira o ano: ");
+    scanf("%i", &ano);
+
+    if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+        printf("Ano bissexto\n");
+    } else {
+        printf("Ano não bissexto\n");
+    }
+
+    return 0;
+}
+
+4. Escreva um programa que verifica se uma pessoa pode dirigir um carro. 
+Para poder dirigir, a pessoa deve ter idade igual ou superior a 18 anos e possuir uma carteira de motorista válida.
+O programa deve exibir a mensagem "Pode dirigir" se a pessoa satisfizer as duas condições, e "Não pode dirigir" caso contrário.
+R:
+
+#include <stdio.h>
+
+int main() {
+    int idade;
+    char habilitado;
+
+    printf("Insira sua idade: ");
+    scanf("%i", &idade);
+
+    printf("Possui carteira de motorista? (s/n): ");
+    scanf(" %c", &habilitado);
+
+    if (idade >= 18 && (habilitado == 's' || habilitado == 'S')) {
+        printf("Pode dirigir\n");
+    } else {
+        printf("Não pode dirigir\n");
+    }
+
+    return 0;
+}
+
+5. Utilize o calculo do IMC feito na lista 03, mas agora verifique se a pessoa está no peso ideal.
+
+Parâmetros:
+
+IMC < 18,5 Classificação: MAGREZA
+
+18,5 <= IMC <=  24,9  Classificação:   NORMAL
+
+25,0 <= IMC <=  29,9  Classificação:   SOBREPESO 
+
+30,0  <= IMC <=  39,9   Classificação:  OBESIDADE
+
+IMC >= 40,0  Classificação:  OBESIDADE GRAVE
+R:
+
+#include <stdio.h>
+
+int main() {
+    float peso, altura, imc;
+
+    printf("Insira o seu peso (kg): ");
+    scanf("%f", &peso);
+
+    printf("Insira a sua altura (m): ");
+    scanf("%f", &altura);
+
+    imc = peso / (altura * altura);
+
+    printf("Seu IMC é %.2f\n", imc);
+    if (imc < 18.5) {
+        printf("Classificação: MAGREZA\n");
+    } else if (imc >= 18.5 && imc <= 24.9) {
+        printf("Classificação: NORMAL\n");
+    } else if (imc >= 25.0 && imc <= 29.9) {
+        printf("Classificação: SOBREPESO\n");
+    } else if (imc >= 30.0 && imc <= 39.9) {
+        printf("Classificação: OBESIDADE\n");
+    } else {
+        printf("Classificação: OBESIDADE GRAVE\n");
+    }
+
+    return 0;
+}
