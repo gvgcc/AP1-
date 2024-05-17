@@ -1,7 +1,7 @@
 1. Escreva um programa em c que verifica se um número inteiro é par. O programa deve exibir a mensagem "O número é par" se o número for par, e "O número é ímpar" caso contrário.
 R: 
 #include <stdio.h>
-
+ 
 int main (){
 
     int numero;
